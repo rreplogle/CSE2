@@ -6,35 +6,21 @@ import java.io.IOException;
 
 import java.io.InputStreamReader;
 
-public class Root{
+public class FourDigits{
      
      
     
     public static void main(String[] args){//creates the main program (method)
     
-        double original = inputDouble("What number would you like to use?");//sets original value
+        double x = inputDouble("What number would you like to use?");
         
-        double crude = 0;//creates variable
+        int y = (int)x;
         
-        double guess = original/3;//defines variable to be used later
+        double z = x-y;
         
-        for(int x=0;x<5;x++){//repeats process 5 times total
-            
-            crude = (2*guess*guess*guess+original)/(3*guess*guess);//defines crude each time based on 'guess'
-            
-            guess = crude;//changes the value of guess each time through the loop to allow for a recurring math function
-            
-        }
+        int end = (int)(z*10000);
         
-        System.out.println("The crude estimation of the cube root of " + original + " is " + crude + ".");//outputs the original value and the estimation of the cube root
-        
-        System.out.println("The estimation cubed is " + Math.pow(crude,3) + ".");//cubes the rough estimation
-        
-        double root = Math.pow(original,.33333333333333333333333);//finds the actual cube root of the original number
-        
-        System.out.println("The cube root of " + original + " is " + root + ".");//outputs the actual cube root
-        
-        System.out.println(root + " * " + root + " * " + root + " = " + Math.pow(root,3));//cubes the actual cube root to show the full circle correctness of the the math function
+        System.out.println("The first four digits to the right of the decimal place of the number that you chose are " + end + ".");
     
     }
     
