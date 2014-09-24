@@ -6,43 +6,45 @@ import java.io.IOException;
 
 import java.io.InputStreamReader;
 
-public class Month{
+public class CourseNumber{
      
      
     
     public static void main(String[] args){//creates the main program (method)    
     
-    int month = inputInt("What month is it? (1-12)");//asks for the month
-    
-    if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {//if the month is 1 OR 3 OR 5, etc
+        int code = inputInt("What is the six digit code for the course semester?");
         
-        System.out.println("This month has 31 days.");//prints the days in the month
-    }
-    
-    else if (month == 4 || month == 6 || month == 9 || month == 11) {//if the month is 4 OR 6, etc
+        if (code == (int) code){
         
-        System.out.println("This month has 30 days.");//prints the number of days
-    }
-    
-    else if (month == 2) {//if the month is feb
-        
-        int year = inputInt("What year is it?");//asks for the year
-        
-        if (year % 4 == 0){//if the year is evenly divisible by 4
+            int year = code/100;
             
-            System.out.println("This year is a leap year. There are 29 days in this month.");//prints the number of days
+            int sem = code % 100;
+            
+            if (sem == 10){
+                
+                System.out.println("That corresponds to the Spring Semester of " + year + "." );
+            }
+        
+            else if (sem == 20){
+                
+                System.out.println("That corresponds to the Summer 1 Semester of " + year + "." );
+            }
+            
+            else if (sem == 30){
+                
+                System.out.println("That corresponds to the Summer 2 Semester of " + year + "." );
+            }
+            
+            else if (sem == 40){
+                
+                System.out.println("That corresponds to the Fall Semester of " + year + "." );
+            }
         }
         
-        else {//if the year is not evenly divisible by 4
+        else {
             
-            System.out.println("This month is not a leap year. There are 28 days in this month.");//prints the number of days
+            System.out.println("You did not enter a valid code.");//prints that the user improperly followed directions
         }
-    }
-    
-    else if (month < 1 || month > 12 || month != (int) month) {//if the user does not input a valid number of if the user does not input an integer
-        
-        System.out.println("You did not enter a valid number (1-12)");//prints that the user improperly followed directions
-    }
     
     }
     
